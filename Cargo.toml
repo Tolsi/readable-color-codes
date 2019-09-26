@@ -1,0 +1,10 @@
+[package]
+name = "readable-color-codes"
+version = "0.1.0"
+authors = ["Sergey Tolmachev <tolsi.ru@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+glyph_brush_layout = "0.1.8"
