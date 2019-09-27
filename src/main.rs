@@ -8,7 +8,7 @@ use rusttype::{FontCollection, Scale};
 fn main() {
     let path = Path::new(&"result.png");
 
-    let mut image = RgbImage::new(270, 30);
+    let mut image = RgbImage::new(15, 30);
 
     let font = Vec::from(include_bytes!("../unifont/unifont-12.1.03.ttf") as &[u8]);
     let font = FontCollection::from_bytes(font)
