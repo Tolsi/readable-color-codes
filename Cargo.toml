@@ -12,3 +12,12 @@ image = "0.22.2"
 rusttype = "0.8.0"
 rayon = "1.1"
 md5 = "0.6.1"
+
+[[bench]]
+name = "encoding"
+harness = false
+
+[dev-dependencies]
+bencher = "0.1"
+rand = "0.3"
+lazy_static = "1.4.0"

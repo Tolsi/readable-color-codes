@@ -5,19 +5,9 @@ use std::path::Path;
 use image::*;
 use imageproc::drawing::{draw_filled_rect_mut, draw_text_mut};
 use imageproc::rect::Rect;
-use itertools::Itertools;
+use md5::compute;
 use rayon::prelude::*;
 use rusttype::{FontCollection, Scale};
-use rusttype::SharedBytes;
-use md5::compute;
-
-fn is_corners_painted_over(image: &mut RgbImage) -> bool {
-    let c1 = image.get_pixel_mut(3, 3) == &Rgb([0u8, 0u8, 0u8]);
-    let c2 = image.get_pixel_mut(image.width() - 4, 3) == &Rgb([0u8, 0u8, 0u8]);
-    let c3 = image.get_pixel_mut(3, image.height() - 4) == &Rgb([0u8, 0u8, 0u8]);
-    let c4 = image.get_pixel_mut(image.width() - 4, image.height() - 4) == &Rgb([0u8, 0u8, 0u8]);
-    c1 && c2 && c3 && c4
-}
 
 fn main() {
     read_dir("unifont/").unwrap().for_each(|r| {
@@ -59,7 +49,6 @@ fn main() {
                     &c.to_string(),
                 );
 
-//            let p = is_corners_painted_over(&mut image);
                 let image_md5 = compute(image.clone().into_raw());
 
                 let _ = image.save(Path::new(&format!("result/{:x}.png", image_md5))).unwrap();

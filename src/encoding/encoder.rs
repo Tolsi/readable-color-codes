@@ -1,8 +1,8 @@
 use super::bigint::BigUint;
 
 pub(crate) fn encode<T>(alpha: &[T], input: &[u8]) -> Vec<T>
-where
-    T: Copy,
+    where
+        T: Copy,
 {
     if input.is_empty() {
         return Vec::new();

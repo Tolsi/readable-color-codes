@@ -35,5 +35,4 @@ impl<'a> Decoder<'a> {
 
         Ok(bytes)
     }
-
 }

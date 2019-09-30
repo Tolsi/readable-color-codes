@@ -1,4 +1,4 @@
-use super::{DecodeError, encoder, decoder::Decoder};
+use super::{DecodeError, decoder::Decoder, encoder};
 
 pub trait Alphabet<T> {
     fn encode(self, input: &[u8]) -> T;

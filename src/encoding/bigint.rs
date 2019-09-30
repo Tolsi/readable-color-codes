@@ -146,6 +146,7 @@ impl BigUint {
 #[cfg(test)]
 mod tests {
     #![allow(clippy::unreadable_literal)]
+
     use super::BigUint;
 
     #[test]

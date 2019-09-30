@@ -1,12 +1,12 @@
+use std::error::Error;
+use std::fmt;
+
+pub use alphabet::Alphabet;
+
 pub mod alphabet;
 mod bigint;
 pub mod decoder;
 pub mod encoder;
-
-pub use alphabet::Alphabet;
-
-use std::error::Error;
-use std::fmt;
 
 #[derive(Debug)]
 pub struct DecodeError;

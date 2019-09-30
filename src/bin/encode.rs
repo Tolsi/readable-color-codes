@@ -1,4 +1,6 @@
-mod encoding;
+extern crate readable_color_codes;
+
+use readable_color_codes::encoding;
 
 fn main() {
     let alph: Vec<u32> = (('\u{0}' as u32)..(2_i32.pow(24) as u32)).collect();
