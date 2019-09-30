@@ -10,13 +10,13 @@ use bencher::Bencher;
 use readable_color_codes::encoding::{Alphabet, decode, encode};
 
 lazy_static! {
-    static ref base2: Vec<u32> = {
+    static ref BASE2: Vec<u32> = {
         "01".chars().map(|c| c as u32).collect()
     };
-    static ref base16: Vec<u32> = {
+    static ref BASE16: Vec<u32> = {
         "0123456789abcdef".chars().map(|c| c as u32).collect()
         };
-    static ref base58: Vec<u32> = {
+    static ref BASE58: Vec<u32> = {
         "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".chars().map(|c| c as u32).collect()
     };
 }
@@ -48,28 +48,28 @@ fn test_encode<T, A: Alphabet<T> + Copy>(bench: &mut Bencher, alph: A) {
 
 // Encode UTF-8
 fn encode_base2(bench: &mut Bencher) {
-    test_encode(bench, base2.as_slice());
+    test_encode(bench, BASE2.as_slice());
 }
 
 fn encode_base16(bench: &mut Bencher) {
-    test_encode(bench, base16.as_slice());
+    test_encode(bench, BASE16.as_slice());
 }
 
 fn encode_base58(bench: &mut Bencher) {
-    test_encode(bench, base58.as_slice());
+    test_encode(bench, BASE58.as_slice());
 }
 
 // Decode UTF-8
 fn decode_base2(bench: &mut Bencher) {
-    test_decode(bench, base2.as_slice());
+    test_decode(bench, BASE2.as_slice());
 }
 
 fn decode_base16(bench: &mut Bencher) {
-    test_decode(bench, base16.as_slice());
+    test_decode(bench, BASE16.as_slice());
 }
 
 fn decode_base58(bench: &mut Bencher) {
-    test_decode(bench, base58.as_slice());
+    test_decode(bench, BASE58.as_slice());
 }
 
 benchmark_group!(
